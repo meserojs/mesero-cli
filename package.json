@@ -1,0 +1,34 @@
+{
+  "name": "naso-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nasojs/naso-cli.git"
+  },
+  "author": "lijialiang@yy.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nasojs/naso-cli/issues"
+  },
+  "homepage": "https://github.com/nasojs/naso-cli#readme",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "bin": {
+    "ns": "./index.js",
+    "naso": "./index.js"
+  },
+  "dependencies": {
+    "commander": "^2.17.1",
+    "del": "^3.0.0",
+    "fs-extra": "^7.0.0",
+    "inquirer": "^6.2.0",
+    "shelljs": "^0.8.2"
+  }
+}
