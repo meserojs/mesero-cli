@@ -19,9 +19,15 @@ module.exports = async function (action, { env = 'production' }) {
 
   await compileSourceCode()
 
-  const { name } = require(path.resolve(rootDir, 'package.json'))
+  const { envs } = require(path.resolve(rootDir, NASO_PM2_CONFIG_FILENAME))
+
+  if (!envs[env]) {
+    console.error(`app for this env not undefined`)
+
+    process.exit(1)
+  }
 
   shell.cd(rootDir)
 
-  shell.exec(`pm2 ${action} ${NASO_PM2_CONFIG_FILENAME} --only ${name}.${env}`)
+  shell.exec(`pm2 ${action} ${NASO_PM2_CONFIG_FILENAME} --only "${envs[env]}"`)
 }
